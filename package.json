@@ -1,0 +1,60 @@
+{
+  "name": "ghui",
+  "version": "0.1.0",
+  "description": "A lazygit-style GitHub TUI — every GitHub action without leaving your terminal",
+  "type": "module",
+  "bin": {
+    "ghui": "./dist/ghui.js"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch & sleep 1 && node --watch dist/ghui.js",
+    "start": "node build.js && node dist/ghui.js",
+    "lint": "eslint src/",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "github",
+    "tui",
+    "cli",
+    "terminal",
+    "lazygit",
+    "ink",
+    "react",
+    "gh",
+    "pull-request",
+    "issues",
+    "devtools"
+  ],
+  "author": "saketh-kowtha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saketh-kowtha/lgh.git"
+  },
+  "homepage": "https://saketh-kowtha.github.io/lgh",
+  "bugs": {
+    "url": "https://github.com/saketh-kowtha/lgh/issues"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "execa": "^8.0.1",
+    "highlight.js": "^11.9.0",
+    "ink": "^4.4.1",
+    "react": "^18.2.0",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.4",
+    "eslint": "^8.57.0",
+    "vitest": "^1.4.0"
+  }
+}
